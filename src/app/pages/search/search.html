@@ -1,0 +1,81 @@
+<section class="page-card">
+  <h2>Search and Filter Items</h2>
+  <p class="subtitle">
+    Search inventory items by name and filter by category, stock status, or popularity.
+  </p>
+
+  <div class="search-form">
+    <input
+      id="keyword"
+      type="text"
+      [(ngModel)]="keyword"
+      placeholder="Search by item name"
+    />
+
+    <select id="category" [(ngModel)]="selectedCategory">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+
+    <select id="stockStatus" [(ngModel)]="selectedStockStatus">
+      <option value="">All Status</option>
+      <option *ngFor="let status of stockStatuses" [value]="status">
+        {{ status }}
+      </option>
+    </select>
+
+    <select id="popular" [(ngModel)]="selectedPopular">
+      <option value="">All Items</option>
+      <option value="Yes">Popular Only</option>
+      <option value="No">Non-Popular Only</option>
+    </select>
+
+    <div class="button-group">
+      <button type="button" (click)="searchItems()">Search</button>
+      <button type="button" (click)="resetFilters()">Show All</button>
+      <button type="button" class="accent-btn" (click)="showPopularOnly()">Popular Only</button>
+    </div>
+  </div>
+</section>
+
+<section class="page-card">
+  <h3>Search Results</h3>
+  <p class="subtitle">Total results: {{ items.length }}</p>
+
+  <div class="table-wrapper">
+    <table *ngIf="items.length > 0; else noResults">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Supplier</th>
+          <th>Status</th>
+          <th>Popular</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | number:'1.2-2' }}</td>
+          <td>{{ item.supplierName }}</td>
+          <td>{{ item.stockStatus }}</td>
+          <td>{{ item.popular ? 'Yes' : 'No' }}</td>
+          <td>{{ item.notes || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ng-template #noResults>
+      <p class="empty-message">No matching items found.</p>
+    </ng-template>
+  </div>
+</section>

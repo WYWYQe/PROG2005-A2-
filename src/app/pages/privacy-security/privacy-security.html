@@ -1,0 +1,40 @@
+<section class="page-card">
+    <h2>Privacy and Security Analysis</h2>
+  
+    <h3>1. Protecting Sensitive Data</h3>
+    <p>
+      Sensitive information such as passwords, payment details, or secret API keys
+      should never be stored directly in the front-end application.
+    </p>
+  
+    <h3>2. Input Validation</h3>
+    <p>
+      All user inputs should be validated to ensure correct data types and prevent
+      invalid or malicious input. For example, quantity and price fields should only
+      accept valid numbers.
+    </p>
+  
+    <h3>3. Local Storage Risks</h3>
+    <p>
+      If localStorage is used to simulate a simple database, developers should understand
+      that it is accessible from the browser and should not be used for highly sensitive data.
+    </p>
+  
+    <h3>4. Preventing Injection and XSS</h3>
+    <p>
+      User-provided content such as notes should be displayed safely to reduce the risk
+      of cross-site scripting (XSS) attacks. Angular’s template binding helps reduce this risk.
+    </p>
+  
+    <h3>5. Error Handling</h3>
+    <p>
+      Error messages shown to users should be clear but should not expose internal system
+      details or technical vulnerabilities.
+    </p>
+  
+    <h3>6. Principle of Least Privilege</h3>
+    <p>
+      In real-world systems, access should be limited so users only have permission to
+      perform actions necessary for their role.
+    </p>
+  </section>

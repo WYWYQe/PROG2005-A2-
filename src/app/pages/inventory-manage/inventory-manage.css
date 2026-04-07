@@ -1,0 +1,94 @@
+.page-card {
+    background: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .inventory-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .inventory-form input,
+  .inventory-form select,
+  .inventory-form textarea {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .inventory-form textarea {
+    grid-column: span 2;
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .button-group {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .delete-btn {
+    background-color: #dc2626;
+  }
+  
+  .message {
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 16px;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f3f4f6;
+  }
+  
+  @media (max-width: 768px) {
+    .inventory-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .inventory-form textarea,
+    .button-group {
+      grid-column: span 1;
+    }
+  }

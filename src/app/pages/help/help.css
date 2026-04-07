@@ -1,0 +1,29 @@
+.page-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    line-height: 1.8;
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #1f2937;
+  }
+  
+  h3 {
+    margin-top: 24px;
+    color: #374151;
+  }
+  
+  .faq-item {
+    margin-bottom: 18px;
+    padding: 12px;
+    background-color: #f9fafb;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+  }
+  
+  h4 {
+    margin: 0 0 8px 0;
+  }

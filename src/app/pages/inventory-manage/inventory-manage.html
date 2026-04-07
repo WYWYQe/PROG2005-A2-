@@ -1,0 +1,84 @@
+<section class="page-card">
+    <h2>Inventory Management</h2>
+  
+    <p class="message" [innerHTML]="message"></p>
+  
+    <form [formGroup]="itemForm" class="inventory-form">
+      <input type="text" placeholder="Item ID" formControlName="id" />
+      <input type="text" placeholder="Item Name" formControlName="name" />
+      
+      <select formControlName="category">
+        <option value="">Select Category</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+  
+      <input type="number" placeholder="Quantity" formControlName="quantity" />
+      <input type="number" placeholder="Price" formControlName="price" />
+      <input type="text" placeholder="Supplier Name" formControlName="supplierName" />
+  
+      <select formControlName="stockStatus">
+        <option value="">Select Stock Status</option>
+        <option *ngFor="let status of stockStatuses" [value]="status">{{ status }}</option>
+      </select>
+  
+      <label class="checkbox-row">
+        <input type="checkbox" formControlName="popular" />
+        Popular Item
+      </label>
+  
+      <textarea placeholder="Item Notes (Optional)" formControlName="notes"></textarea>
+  
+      <div class="button-group">
+        <button type="button" (click)="addItem()">Add Item</button>
+        <button type="button" (click)="updateItem()">Update Item</button>
+        <button type="button" class="delete-btn" (click)="deleteItem()">Delete Item</button>
+      </div>
+    </form>
+  </section>
+  
+  <section class="page-card">
+    <h3>All Inventory Items</h3>
+  
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Supplier</th>
+            <th>Status</th>
+            <th>Popular</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.supplierName }}</td>
+            <td>{{ item.stockStatus }}</td>
+            <td>{{ item.popular ? 'Yes' : 'No' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="page-card">
+    <h3>Popular Items</h3>
+  
+    <ul *ngIf="popularItems.length > 0; else noPopular">
+      <li *ngFor="let item of popularItems">
+        {{ item.name }} - {{ item.category }} - {{ item.stockStatus }}
+      </li>
+    </ul>
+  
+    <ng-template #noPopular>
+      <p>No popular items found.</p>
+    </ng-template>
+  </section>
