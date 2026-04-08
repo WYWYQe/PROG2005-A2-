@@ -1,3 +1,4 @@
+/* wang_Yueqi_24832818 */
 .page-card {
     background: white;
     padding: 24px;
@@ -6,6 +7,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
   
+  /* Inventory form */
   .inventory-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -21,18 +23,21 @@
     font-size: 14px;
   }
   
+  /* Item notes textarea */
   .inventory-form textarea {
     grid-column: span 2;
     min-height: 100px;
     resize: vertical;
   }
   
+  /* Checkbox row */
   .checkbox-row {
     display: flex;
     align-items: center;
     gap: 8px;
   }
   
+  /* Button group */
   .button-group {
     grid-column: span 2;
     display: flex;

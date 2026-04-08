@@ -1,3 +1,4 @@
+/* wang_Yueqi_24832818 */
 .home-shell {
   max-width: 1180px;
   margin: 0 auto;
@@ -26,6 +27,7 @@
   margin-bottom: 18px;
 }
 
+/* Hero title */
 .hero-card h1 {
   font-size: 48px;
   line-height: 1.15;
@@ -35,6 +37,7 @@
   max-width: 900px;
 }
 
+/* Hero text */
 .hero-text {
   font-size: 20px;
   line-height: 1.8;

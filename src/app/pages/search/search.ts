@@ -1,3 +1,4 @@
+// wang_Yueqi_24832818
 import { Component, OnInit } from '@angular/core';
 import { InventoryService } from '../../services/inventory';
 import {
@@ -6,6 +7,7 @@ import {
   STOCK_STATUS_OPTIONS
 } from '../../models/inventory-item';
 
+// Define the search page component
 @Component({
   selector: 'app-search',
   standalone: false,
@@ -23,12 +25,14 @@ export class SearchComponent implements OnInit {
   categories = CATEGORY_OPTIONS;
   stockStatuses = STOCK_STATUS_OPTIONS;
 
+  // Constructor to inject dependencies
   constructor(private inventoryService: InventoryService) {}
 
   ngOnInit(): void {
     this.loadAllItems();
   }
 
+  // Load all items from the inventory service
   loadAllItems(): void {
     this.items = this.inventoryService.getAllItems();
   }

@@ -1,3 +1,4 @@
+<!-- wang_Yueqi_24832818 -->
 <section class="page-card">
     <h2>Inventory Management</h2>
   
@@ -21,6 +22,7 @@
         <option *ngFor="let status of stockStatuses" [value]="status">{{ status }}</option>
       </select>
   
+      <!-- Popular item checkbox -->
       <label class="checkbox-row">
         <input type="checkbox" formControlName="popular" />
         Popular Item
@@ -39,6 +41,7 @@
   <section class="page-card">
     <h3>All Inventory Items</h3>
   
+    <!-- All inventory items table -->
     <div class="table-wrapper">
       <table>
         <thead>
@@ -72,6 +75,7 @@
   <section class="page-card">
     <h3>Popular Items</h3>
   
+    <!-- Popular items list -->
     <ul *ngIf="popularItems.length > 0; else noPopular">
       <li *ngFor="let item of popularItems">
         {{ item.name }} - {{ item.category }} - {{ item.stockStatus }}

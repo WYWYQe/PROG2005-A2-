@@ -1,3 +1,4 @@
+<!-- wang_Yueqi_24832818 -->
 <section class="page-card">
   <h2>Search and Filter Items</h2>
   <p class="subtitle">
@@ -19,6 +20,7 @@
       </option>
     </select>
 
+    <!-- Stock status select -->
     <select id="stockStatus" [(ngModel)]="selectedStockStatus">
       <option value="">All Status</option>
       <option *ngFor="let status of stockStatuses" [value]="status">
@@ -26,12 +28,14 @@
       </option>
     </select>
 
+    <!-- Popular item select -->
     <select id="popular" [(ngModel)]="selectedPopular">
       <option value="">All Items</option>
       <option value="Yes">Popular Only</option>
       <option value="No">Non-Popular Only</option>
     </select>
 
+    <!-- Button group -->
     <div class="button-group">
       <button type="button" (click)="searchItems()">Search</button>
       <button type="button" (click)="resetFilters()">Show All</button>
@@ -40,10 +44,12 @@
   </div>
 </section>
 
+<!-- Search results -->
 <section class="page-card">
   <h3>Search Results</h3>
   <p class="subtitle">Total results: {{ items.length }}</p>
 
+  <!-- Search results table -->
   <div class="table-wrapper">
     <table *ngIf="items.length > 0; else noResults">
       <thead>
@@ -74,6 +80,7 @@
       </tbody>
     </table>
 
+    <!-- No results message -->
     <ng-template #noResults>
       <p class="empty-message">No matching items found.</p>
     </ng-template>

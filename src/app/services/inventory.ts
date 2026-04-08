@@ -1,3 +1,5 @@
+// wang_Yueqi_24832818
+
 import { Injectable } from '@angular/core';
 import { InventoryItem } from '../models/inventory-item';
 
@@ -5,6 +7,7 @@ import { InventoryItem } from '../models/inventory-item';
   providedIn: 'root'
 })
 export class InventoryService {
+  // Store inventory item data
   private items: InventoryItem[] = [
     {
       id: 1,
@@ -41,18 +44,22 @@ export class InventoryService {
     }
   ];
 
+  // Return all inventory items
   getAllItems(): InventoryItem[] {
     return [...this.items];
   }
 
+  // Return only popular items
   getPopularItems(): InventoryItem[] {
     return this.items.filter((item) => item.popular);
   }
 
+  // Convert item ID to a standard string format
   private normalizeId(id: string | number): string {
     return String(id).trim();
   }
 
+  // Add a new item if the ID does not already exist
   addItem(item: InventoryItem): boolean {
     const newItemId = this.normalizeId(item.id);
     const exists = this.items.some(
@@ -67,6 +74,7 @@ export class InventoryService {
     return true;
   }
 
+  // Update an item by its name
   updateItemByName(name: string, updatedItem: InventoryItem): boolean {
     const index = this.items.findIndex(
       (item) => item.name.toLowerCase() === name.toLowerCase()
@@ -80,6 +88,7 @@ export class InventoryService {
     return true;
   }
 
+  // Delete an item by its name
   deleteItemByName(name: string): boolean {
     const index = this.items.findIndex(
       (item) => item.name.toLowerCase() === name.toLowerCase()
@@ -93,12 +102,14 @@ export class InventoryService {
     return true;
   }
 
+  // Search items by name
   searchByName(keyword: string): InventoryItem[] {
     return this.items.filter((item) =>
       item.name.toLowerCase().includes(keyword.toLowerCase())
     );
   }
 
+  // Search and filter items by multiple conditions
   searchAndFilter(
     keyword: string,
     category: string,

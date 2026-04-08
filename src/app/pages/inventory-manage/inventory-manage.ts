@@ -1,8 +1,10 @@
+// wang_Yueqi_24832818
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InventoryService } from '../../services/inventory';
 import { InventoryItem, Category, StockStatus } from '../../models/inventory-item';
 
+// Define the inventory management page component
 @Component({
   selector: 'app-inventory-manage',
   templateUrl: './inventory-manage.html',
@@ -18,6 +20,7 @@ export class InventoryManageComponent implements OnInit {
   categories: Category[] = ['Electronics', 'Furniture', 'Clothing', 'Tools', 'Other'];
   stockStatuses: StockStatus[] = ['In Stock', 'Low Stock', 'Out of Stock'];
 
+  // Constructor to inject dependencies
   constructor(
     private fb: FormBuilder,
     private inventoryService: InventoryService
@@ -44,6 +47,7 @@ export class InventoryManageComponent implements OnInit {
     this.popularItems = this.inventoryService.getPopularItems();
   }
 
+  // Add a new item to the inventory
   addItem(): void {
     if (this.itemForm.invalid) {
       this.message = 'Please complete all required fields correctly.';
@@ -61,6 +65,7 @@ export class InventoryManageComponent implements OnInit {
     }
   }
 
+  // Update an existing item in the inventory
   updateItem(): void {
     if (this.itemForm.invalid) {
       this.message = 'Please complete all required fields correctly.';
@@ -75,6 +80,7 @@ export class InventoryManageComponent implements OnInit {
     this.loadItems();
   }
 
+  // Delete an item from the inventory
   deleteItem(): void {
     const name = this.itemForm.value.name;
 
