@@ -49,9 +49,14 @@ export class InventoryService {
     return this.items.filter((item) => item.popular);
   }
 
+  private normalizeId(id: string | number): string {
+    return String(id).trim();
+  }
+
   addItem(item: InventoryItem): boolean {
+    const newItemId = this.normalizeId(item.id);
     const exists = this.items.some(
-      (existingItem) => existingItem.id === item.id
+      (existingItem) => this.normalizeId(existingItem.id) === newItemId
     );
 
     if (exists) {

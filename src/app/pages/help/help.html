@@ -1,48 +1,91 @@
-<section class="page-card">
-    <h2>Help & Troubleshooting</h2>
-  
-    <h3>Frequently Asked Questions</h3>
-  
-    <div class="faq-item">
-      <h4>Why can’t I add a new item?</h4>
-      <p>
-        Please make sure all required fields are filled in correctly and the item ID is unique.
-      </p>
+<section class="page-shell">
+  <div class="page-card">
+    <h1>Help & Troubleshooting</h1>
+    <p class="subtitle">
+      This page provides common questions and troubleshooting guidance for using
+      the inventory management system.
+    </p>
+
+    <div class="faq-block">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Why can’t I add a new item?</h3>
+        <p>
+          Please check whether all required fields are completed. Item ID must
+          be unique, and fields like item name, quantity, price, supplier, and
+          stock status must be valid.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why is my quantity or price rejected?</h3>
+        <p>
+          Quantity and price only accept valid numeric values. Negative numbers
+          and text input are not allowed.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I update an item?</h3>
+        <p>
+          Go to the Inventory page, click the Edit button beside the item, make
+          changes in the form, and then save the updated record.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete an item?</h3>
+        <p>
+          Click the Delete button beside the item you want to remove. A
+          confirmation step is shown before the record is deleted.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I find popular items?</h3>
+        <p>
+          Use the Search page and choose the “Popular only” option to display
+          items marked as popular.
+        </p>
+      </div>
     </div>
-  
-    <div class="faq-item">
-      <h4>Why can’t I update an item?</h4>
-      <p>
-        Updates are performed by item name. Make sure the item name exists in the inventory.
-      </p>
+
+    <div class="faq-block">
+      <h2>Troubleshooting</h2>
+
+      <div class="faq-item">
+        <h3>Search returns no results</h3>
+        <p>
+          Make sure the item name is spelled correctly. Try using part of the
+          name instead of the full name.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>The page looks broken on a small screen</h3>
+        <p>
+          Refresh the browser and make sure the latest CSS changes are loaded.
+          The system is designed to be responsive for mobile and desktop views.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>My saved data disappeared</h3>
+        <p>
+          If the app only uses in-memory data, information will be lost after
+          refresh or closing the browser. If localStorage is enabled, clearing
+          browser data may also remove saved items.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I reset the application?</h3>
+        <p>
+          You can remove test items manually by deleting them one by one, or
+          clear local storage if your version stores data in the browser.
+        </p>
+      </div>
     </div>
-  
-    <div class="faq-item">
-      <h4>Why can’t I delete an item?</h4>
-      <p>
-        Deletion also works by item name. Please ensure the item exists before deleting it.
-      </p>
-    </div>
-  
-    <div class="faq-item">
-      <h4>Why is my search not returning results?</h4>
-      <p>
-        Check your spelling or try a shorter keyword. Filters may also affect the results.
-      </p>
-    </div>
-  
-    <div class="faq-item">
-      <h4>How can I reset the inventory data?</h4>
-      <p>
-        If local storage is used, clearing browser storage will remove saved data and reset the system.
-      </p>
-    </div>
-  
-    <h3>Input Rules</h3>
-    <ul>
-      <li>Quantity must be a valid non-negative number</li>
-      <li>Price must be a valid non-negative number</li>
-      <li>Item ID must be unique</li>
-      <li>Item name is required for update and delete operations</li>
-    </ul>
-  </section>
+  </div>
+</section>

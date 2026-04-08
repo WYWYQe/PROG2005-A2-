@@ -1,40 +1,89 @@
-<section class="page-card">
-    <h2>Privacy and Security Analysis</h2>
-  
-    <h3>1. Protecting Sensitive Data</h3>
-    <p>
-      Sensitive information such as passwords, payment details, or secret API keys
-      should never be stored directly in the front-end application.
+<section class="page-shell">
+  <div class="page-card">
+    <h1>Privacy & Security Analysis</h1>
+    <p class="subtitle">
+      This page explains important privacy and security considerations for the
+      inventory management system.
     </p>
-  
-    <h3>2. Input Validation</h3>
-    <p>
-      All user inputs should be validated to ensure correct data types and prevent
-      invalid or malicious input. For example, quantity and price fields should only
-      accept valid numbers.
-    </p>
-  
-    <h3>3. Local Storage Risks</h3>
-    <p>
-      If localStorage is used to simulate a simple database, developers should understand
-      that it is accessible from the browser and should not be used for highly sensitive data.
-    </p>
-  
-    <h3>4. Preventing Injection and XSS</h3>
-    <p>
-      User-provided content such as notes should be displayed safely to reduce the risk
-      of cross-site scripting (XSS) attacks. Angular’s template binding helps reduce this risk.
-    </p>
-  
-    <h3>5. Error Handling</h3>
-    <p>
-      Error messages shown to users should be clear but should not expose internal system
-      details or technical vulnerabilities.
-    </p>
-  
-    <h3>6. Principle of Least Privilege</h3>
-    <p>
-      In real-world systems, access should be limited so users only have permission to
-      perform actions necessary for their role.
-    </p>
-  </section>
+
+    <div class="content-block">
+      <h2>1. Sensitive Data Should Not Be Stored in the Frontend</h2>
+      <p>
+        This application stores inventory information such as item name, price,
+        quantity, supplier name, and stock status. It should not store highly
+        sensitive information such as passwords, payment details, secret keys,
+        or personal identity data directly in the browser.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>2. Input Validation Is Important</h2>
+      <p>
+        All user input should be validated before it is saved. For example,
+        quantity and price should only accept valid numbers, required fields
+        must not be empty, and category or stock status should only allow
+        predefined options.
+      </p>
+      <p>
+        This reduces incorrect data entry and helps protect the system from
+        unexpected or unsafe input.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>3. Local Storage Has Risks</h2>
+      <p>
+        If localStorage is used to keep data after refreshing the browser, the
+        data remains on the user’s device. This is convenient, but it also means
+        other users on the same device may access the stored information.
+      </p>
+      <p>
+        For real business systems, sensitive data should be protected on a
+        secure backend instead of relying only on browser storage.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>4. Avoid Cross-Site Scripting (XSS)</h2>
+      <p>
+        User-entered text such as notes or supplier names should be displayed
+        safely. Developers should avoid inserting unsafe HTML directly into the
+        page unless the content is sanitized.
+      </p>
+      <p>
+        Angular helps reduce XSS risks because it escapes template output by
+        default, which is safer than directly writing raw HTML into the page.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>5. Principle of Least Privilege</h2>
+      <p>
+        In a larger real-world system, users should only have access to the
+        functions they need. For example, some users may only be allowed to view
+        stock, while managers can add, edit, or delete inventory records.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>6. Error Messages Should Be Clear but Safe</h2>
+      <p>
+        Error messages should help users understand what went wrong, such as
+        “Item name is required” or “Price must be a valid number”. However, the
+        system should avoid exposing technical internal details that could create
+        security risks.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>7. Summary</h2>
+      <p>
+        This inventory system is suitable for learning frontend development and
+        Angular application structure. To improve privacy and security in a real
+        business environment, the application should use stronger validation,
+        secure authentication, role-based access control, and backend data
+        protection.
+      </p>
+    </div>
+  </div>
+</section>
